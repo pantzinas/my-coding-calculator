@@ -27,7 +27,11 @@ public class Main {
         return a * b;
     }
 
-    public static int mod(int a, int b) {
-        return a % b;
-    }
+    public static int mod(int a, int b) throws ArithmeticException {
+        try {
+            return a % b;
+        } catch (ArithmeticException e) {
+            System.err.println("Error. Denominator must not be zero.");
+            throw e;
+        }
 }
